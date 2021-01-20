@@ -1,0 +1,2 @@
+# Wxx_Flutter_GetX_Demo
+flutter跨平台Ui框架中的GetX例子
