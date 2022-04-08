@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:getx_demo/model/user_model.dart';
 import 'package:getx_demo/pages/first/first_controller.dart';
 import 'package:getx_demo/pages/first/view/view_user_item.dart';
+import 'package:getx_demo/routes/app_pages.dart';
 
 class FirstView extends GetView<FirstController> {
   @override
@@ -33,9 +34,10 @@ class FirstView extends GetView<FirstController> {
                   itemModel: itemmodel,
                   onItemTap: () {
                     // 点击跳转到secondview
-                    // Get.toNamed(Routes.SecondView, arguments: itemmodel);
+                    Get.toNamed(Routes.SecondView, arguments: itemmodel);
+                    // Get.to(SecondView(), binding: SecondBinding());
 
-                    Get.changeTheme(ThemeData.dark());
+                    // Get.offAll(SecondView(), binding: SecondBinding());
                   },
                 );
               },

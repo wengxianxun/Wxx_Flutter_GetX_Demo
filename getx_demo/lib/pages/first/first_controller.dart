@@ -4,7 +4,7 @@ import 'package:getx_demo/model/user_model.dart';
 
 class FirstController extends GetxController with StateMixin<UserModelResult> {
   final AbStractBaseApiRepository firstRepository;
-
+  final List list = [].obs;
   FirstController({this.firstRepository});
 
   @override

@@ -19,6 +19,7 @@ class MyApp extends GetView {
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
       onInit: () {
+        Get.changeTheme(ThemeData.dark());
         // 初始化懒加载一些全局使用的类，可以认为这是一种单例
         Get.lazyPut<AbstractBaseApiProvider>(() => BaseApiProvider());
         Get.lazyPut<AbStractBaseApiRepository>(
