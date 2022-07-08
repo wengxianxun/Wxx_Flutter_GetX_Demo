@@ -5,6 +5,7 @@ import 'package:getx_demo/model/user_model.dart';
 class FirstController extends GetxController with StateMixin<UserModelResult> {
   final AbStractBaseApiRepository firstRepository;
   final List list = [].obs;
+  var usermodelresult = UserModelResult().obs;
   FirstController({this.firstRepository});
 
   @override
@@ -24,8 +25,22 @@ class FirstController extends GetxController with StateMixin<UserModelResult> {
         '{"user_name":"用户1","user_age":"10岁"},'
         '{"user_name":"用户2","user_age":"11岁"}'
         ']}');
+
+    usermodelresult.value = result;
     // 结果改变， change函数是StateMixin内部实现的，建议你细读StateMixin内部代码，内部代码对result进行obx变更通知界面
-    change(result, status: RxStatus.success());
+    // change(result, status: RxStatus.success());
+  }
+
+  void updateList() {
+    UserModelResult result = UserModelResult.fromRawJson('{"c": 0,"result": ['
+        '{"user_name":"用户1","user_age":"10岁"},'
+        '{"user_name":"用户2","user_age":"11岁"},'
+        '{"user_name":"用户2","user_age":"12岁"},'
+        '{"user_name":"用户2","user_age":"13岁"},'
+        '{"user_name":"用户2","user_age":"14岁"}'
+        ']}');
+
+    usermodelresult.value = result;
   }
 
   @override
